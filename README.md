@@ -12,6 +12,9 @@ cd 01-first-game
 http-server
 ```
 
+### Docs
+
+[Phaser 3 API docs](https://photonstorm.github.io/phaser3-docs/)
 
 ### Folders
 
