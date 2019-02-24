@@ -1,0 +1,6 @@
+# Raw/bin files for tiles and other assets
+*/assets/raw/*
+
+# JS transpiling and deps
+*/node_modules/*
+*/dist/*
