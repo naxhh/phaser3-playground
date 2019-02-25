@@ -135,7 +135,7 @@ export class LevelScene extends Phaser.Scene {
         const stop = (x: number, y: number) => x >= stopX;
 
         while (currentY <= stopY) {
-            this.addGridLine(currentY, 0, next, skip, stop);
+            this.addGridLine(0, currentY, next, skip, stop);
             currentY += this.tileMap.tileHeight;
         }
     }
