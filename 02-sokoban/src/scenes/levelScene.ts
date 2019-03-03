@@ -2,6 +2,8 @@ import * as Phaser from 'phaser';
 import Crate from '../sprites/crate';
 import Player from '../sprites/player';
 
+export type PlayerDirection = 'playerLeft' | 'playerRight' | 'playerUp' | 'playerDown';
+
 export class LevelScene extends Phaser.Scene {
     private player: Player
     private crates: Phaser.GameObjects.Group;
@@ -14,6 +16,11 @@ export class LevelScene extends Phaser.Scene {
     private spawnLayer: Phaser.Tilemaps.StaticTilemapLayer;
     private goalLayer: Phaser.Tilemaps.StaticTilemapLayer;
     private crateLayer: Phaser.Tilemaps.StaticTilemapLayer;
+
+    private leftKeys: Phaser.Input.Keyboard.Key[];
+    private rightKeys: Phaser.Input.Keyboard.Key[];
+    private upKeys: Phaser.Input.Keyboard.Key[];
+    private downKeys: Phaser.Input.Keyboard.Key[];
 
     constructor() {
         super({
@@ -188,4 +195,36 @@ export class LevelScene extends Phaser.Scene {
         camera.setOrigin(0, 0);
         camera.setScroll(0, 0);
     }
+
+    private createInputHandler() {
+        this.leftKeys = [Phaser.Input.Keyboard.KeyCodes.LEFT, Phaser.Input.Keyboard.KeyCodes.A, Phaser.Input.Keyboard.KeyCodes.Q].map((key) => {
+          return this.input.keyboard.addKey(key);
+        });
+        this.rightKeys = [Phaser.Input.Keyboard.KeyCodes.RIGHT, Phaser.Input.Keyboard.KeyCodes.D].map((key) => {
+          return this.input.keyboard.addKey(key);
+        });
+        this.upKeys = [Phaser.Input.Keyboard.KeyCodes.UP, Phaser.Input.Keyboard.KeyCodes.W, Phaser.Input.Keyboard.KeyCodes.Z].map((key) => {
+          return this.input.keyboard.addKey(key);
+        });
+        this.downKeys = [Phaser.Input.Keyboard.KeyCodes.DOWN, Phaser.Input.Keyboard.KeyCodes.S].map((key) => {
+          return this.input.keyboard.addKey(key);
+        });
+      }
+
+      private getPlayerDirection(): PlayerDirection | null {
+        if (this.leftKeys.some((key) => key.isDown)) {
+          return 'playerLeft';
+        }
+        if (this.rightKeys.some((key) => key.isDown)) {
+          return 'playerRight';
+        }
+    
+        if (this.upKeys.some((key) => key.isDown)) {
+          return 'playerUp';
+        }
+        if (this.downKeys.some((key) => key.isDown)) {
+          return 'playerDown';
+        }
+        return null;
+      }
 }

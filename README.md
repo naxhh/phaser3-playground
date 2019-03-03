@@ -31,3 +31,15 @@ This is an implementation of the [main tutorial](http://phaser.io/tutorials/maki
 The result of following [implementing sokoban in phaser3](https://www.crazygames.com/blog/2018/10/24/Implementing-Sokoban-in-Phaser3/)
 This one uses TypeScript instead of plain JS
 
+### TODO Games...
+
+https://phaser.io/learn
+https://yorkcs.com/build-a-space-shooter-with-phaser-3/
+https://gamedevacademy.org/create-a-basic-multiplayer-game-in-phaser-3-with-socket-io-part-1/?a=13
+https://www.codementor.io/amoslaber/build-a-paper-plane-with-phaser-3-and-arcade-physics-s8so8u831
+https://github.com/seattlecoderdojo/RetroGamingWorkshop
+
+
+### Assets
+https://kenney.nl/store
+https://www.construct.net/en/forum/game-development/tools-and-resources-27/kenneys-free-assets-20-000-ass-70995

@@ -6,3 +6,6 @@
 npm install
 npm run dev
 ```
+
+## Unfinished
+I got bored of it :D

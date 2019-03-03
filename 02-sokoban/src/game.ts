@@ -1,11 +1,12 @@
 import "phaser";
 import { MainScene } from "./scenes/mainScene";
 import { LevelScene } from "./scenes/levelScene";
+import { WIDTH, HEIGHT } from "./constants";
 
 // main game configuration
 const config: GameConfig = {
-  width: 800,
-  height: 600,
+  width: WIDTH,
+  height: HEIGHT,
   type: Phaser.AUTO,
   parent: "game",
   scene: LevelScene,
